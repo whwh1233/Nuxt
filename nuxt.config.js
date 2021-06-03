@@ -7,13 +7,26 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/css/_reset.css', '~/assets/css/app.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/axios.js'],
+  plugins: [
+    '~/plugins/axios.js',
+    {
+      src: '~/plugins/vue-infinite-scroll.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/swiper.js',
+      ssr: false
+    }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
+  components: {
+    dirs: ['~/components', '~/components/notice', '~/components/activity', '~/components/base', '~/components/common', '~/components/item']
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],

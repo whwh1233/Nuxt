@@ -1,0 +1,339 @@
+/* @import url('./_reset.css?__inline'); */
+
+.cfix:before,
+.cfix:after {
+  content: '';
+  display: table;
+}
+
+.cfix:after {
+  clear: both;
+}
+
+body {
+  color: #111111;
+  font-size: 28px;
+  background-color: #f6f6f6;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.wx-ios-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(98px + env(safe-area-inset-bottom));
+}
+
+.wx-ios-footer-1 {
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+.wx-ios-footer-80px {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(80px + env(safe-area-inset-bottom));
+}
+
+.wx-ios-footer-97px {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(97px + env(safe-area-inset-bottom));
+}
+.wx-ios-footer-98px {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(98px + env(safe-area-inset-bottom));
+}
+
+.wx-ios-footer-100px {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(100px + env(safe-area-inset-bottom));
+}
+
+.wx-ios-footer-108px {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(108px + env(safe-area-inset-bottom));
+}
+
+.wx-ios-back-to-top {
+  bottom: calc(107px + env(safe-area-inset-bottom)) !important;
+}
+
+.wx-ios-footer-bottom-97px {
+  bottom: calc(97px + env(safe-area-inset-bottom)) !important;
+}
+.wx-ios-footer-bottom-98px {
+  bottom: calc(98px + env(safe-area-inset-bottom)) !important;
+}
+
+.wx-ios-footer-bottom-100px {
+  bottom: calc(100px + env(safe-area-inset-bottom)) !important;
+}
+
+.bg-wht,
+.bgc-wt {
+  background-color: #fff;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+pre {
+  font-family: PingFangSC-Regular, PingFangTC-Regular, PingFangHK-Regular, 'Noto Sans SC', sans-serif;
+}
+
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+
+  border: none;
+  outline: none;
+}
+
+[v-cloak],
+[transparent] {
+  opacity: 0;
+}
+
+.no-touch {
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+.h0 {
+  height: 0;
+}
+
+.block-image {
+  display: block;
+  width: 100%;
+}
+
+.fc-rd {
+  color: #f95555;
+}
+
+.fc-bl {
+  color: #111;
+}
+
+.fw-t {
+  font-family: PingFangSC-Light, PingFangTC-Light, PingFangHK-Light, sans-serif;
+  font-weight: lighter;
+}
+
+.fw-b {
+  font-family: PingFangSC-Medium, PingFangTC-Medium, PingFangHK-Medium, sans-serif;
+  font-weight: bold;
+}
+
+.fw-bb {
+  font-family: PingFangSC-Semibold, PingFangTC-Semibold, PingFangHK-Semibold, sans-serif;
+  font-weight: bolder;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.line-1 {
+  -webkit-line-clamp: 1;
+}
+
+.line-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-3 {
+  -webkit-line-clamp: 3;
+}
+
+.line-4 {
+  -webkit-line-clamp: 4;
+}
+
+.line-5 {
+  -webkit-line-clamp: 5;
+}
+
+.line-6 {
+  -webkit-line-clamp: 6;
+}
+
+.div-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ofl-h {
+  overflow: hidden;
+}
+
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}
+
+.bi-arr-r-gy {
+  margin-left: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url('https://pic.bbtkids.cn/FsZhpvzTqcwoYa9HhkslUcioZHLQ');
+  background-position: center right;
+  background-size: contain;
+}
+
+.bi-arr-r-black {
+  margin-left: 0;
+  width: 36px;
+  height: 36px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7klEQVRYR+3WzQrCMBAE4Elz789dQdEXqeBr64tUVPQe2vsWya2UanFnJQjtvczHNNmuQ+LHJc7HAvjPBsqybJxzXkSOXdc1zDlSNVBV1RXABsBTRGoGoQLkeb733p8ArAE8ROSgRagAsXIrhBpghaAAA8QZwErzOWgAizABMAgzwBSi7/u6bdvLpzlhCtAgzAETiFsIYfuuhZ8AiqLYZVkWb0YcVPcQQpyak485YBQ+O6pNAd+Gx0rMAJpwM8DovzBb+/Aw0A0w4XQDbDgFsAhXA6zC1YDBSkZtQ2pA8qWU2YLH79LXkMUsgOQNvACwkLwhxlNcdgAAAABJRU5ErkJggg==');
+  background-position: center right;
+}
+
+.bi {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bi-close {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAKJQTFRFAAAAtra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2tra2t7e3ysrKy8vLzs7Oz8/P7+/v8PDw8vLy8/Pz9PT0D06wfwAAACt0Uk5TAAELDCMkR0hJUFJTV1hZWluEhoeUmKipqrCyurvQ0dbX2Ozt7vHy9vf5+tVwat8AAAFfSURBVDiNnZXreoIwDIYLKt10zgmbBxRkHhCMOMfh/m9t1Ach0Bbovl+keemTJmlKSF26Ya53hzA87NYm1UmLNLo8A9J5STUZO3aAk/MqRIcbHmXaDHn27SRmAU7TZrRzGco0r0WufbaxAF+YttpZAKtip10swHuZB+nZKvnPnEhyVtemqEUfFmD8yASu2/UKMstlGTHQwj2Jo8q6xckPctIcXqCdkixLbyWbZlmC9l7kPRmgn+OsohmbxcgZ6LUoIEpL+sGmEfYaxMRmgdzQB5JJbBDRIhZs4oGIFrHgkT2IaBELexI2lwqaZyFUg5XCUDqgUuqUikKx2V5uWm+k345G6t+iy7yfcRxc89+R84VdKxctdF2rvhd2ojAKts8h43ez/ug/40ttMKqNXKVhnmsmfyY+CKfRVsxuRzyba+LyqDMRoixyusI9CMFK/mgyDahpe8fL5fhtW3TQcP4BA80DfcdsWTQAAAAASUVORK5CYII=');
+}
+
+/* 加号 */
+
+.bi-add {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAjUlEQVRYR+3UMQ6AIBBEUag8IafkhFYSTChsJMxsgeZbOzB5LOS0+Zc375co6J4Qggi6Am6eGUTQFXDzoTN4lnL1QketYeuGLdSLUdCdFwQRFASWb/GYM2GvO7L6BP2v4Jsct1idq5FDEEFBYPmZ+fQtFoCmkVDB6W7CDxQU0B4RBBF0Bdw8M4igK+DmG2QFQCkQMZ/BAAAAAElFTkSuQmCC');
+}
+
+.bi-add--disable {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAi0lEQVRYR+3UMQ6AIBBEUbgkh9xLaiChsJEwswWab+3A5LFQy+FfPbxfoaB7Qggi6Aq4eWYQQVfAzafOYERcvVBrLW3dtIV6MQq684IggoLA9i2ecybsNSK7T9D/Cr7JcYvVuZo5BBEUBLafmU/fYgFoGUkVXO4m/EBBAe0RQRBBV8DNM4MIugJu/ga5VUApaKYaOQAAAABJRU5ErkJggg==');
+}
+
+/* 减号 */
+
+.bi-sub {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAdElEQVRYR+3SMQ4AEBBEUSon3FM6oYo4wvqJbPHVJibP9Fb89OL9mgXpDymoIBWgeTeoIBWgeTeoIBWgeTf4XXBFbPLomDP1a6nLt1j5gkTvJZsWfHmEZCxI9G5WQQWpAM27QQWpAM27QQWpAM27QQWpAM0fDDAIKcwTJ8UAAAAASUVORK5CYII=');
+}
+
+.bi-sub--disable {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAcklEQVRYR+3SwQkAIAwEQW0yRaZJxRKSBcljfXt4jLfX8LOH91sWpD+koIJUgObdoIJUgObdoIJUgObd4HfBzDzk0Ygo/Vrp8is2viDR62TLgp1HSMaCRO9lFVSQCtC8G1SQCtC8G1SQCtC8G1SQCtD8BTmwCCkb+jiqAAAAAElFTkSuQmCC');
+}
+.bi-trash--gy {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAFVBMVEUAAADb29vd3d3e3t7d3d3i4uLd3d240P2SAAAABnRSTlMAFOrwoSPiuxiFAAAAPklEQVQoz2MAgzQwADMxBQiDNDSAKcCAZBaIQzsBxiQQR01gOAhQP4DMAhB81mQg4YYcTSlAAREzBD/ZkQEA6Ic2U5rg0lgAAAAASUVORK5CYII=')
+    no-repeat center/32px 32px;
+}
+.more-icon {
+  background-image: url('https://pic.bbtkids.cn/Fk7GHFlZIPYshhcJFy6wv9owLkEB');
+}
+
+.cart-icon {
+  background-image: url('https://pic.bbtkids.cn/FgKDF3TIfOOjAiHSuRuJw8dXNpvZ');
+}
+
+.service-icon {
+  background-image: url('https://pic.bbtkids.cn/FoT1GTdpAfjgor4_O1FV1FOlVY3C');
+}
+
+.source-icon {
+  background-image: url('https://pic.bbtkids.cn/FsWSVtzB9Mv4tzyWZmmo8WcyPytj');
+}
+
+.discover-icon {
+  background-image: url('https://pic.bbtkids.cn/Fn52GlSUlFYCqzoh6wPo1l_OaGWK');
+}
+
+.bi__item__remain-img {
+  background-image: url('https://pic.wanwustore.cn/FumoB7hgF5Nda_yt7byUbK6w7Bs-');
+}
+
+.bi__item__soldout-img {
+  background-image: url('https://pic.wanwustore.cn/Fp01CrHd8u_xRY-wY8e0_bFJWJXW');
+}
+
+.common__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* 会员 */
+.icon--60 {
+  width: 90px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/Fnj5_9UATYkwhmld-eMvSIGd8yNp') no-repeat center/contain;
+}
+
+.icon--100 {
+  width: 90px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FnNxOl21f0WI-mIUbmqpODv0VN1d') no-repeat center/contain;
+}
+
+/* 金牌 */
+.icon--200 {
+  width: 80px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FmntiuafQBYp43jRKAzcu4KYUgV6') no-repeat center/contain;
+}
+
+/* 钻石 */
+.icon--210 {
+  width: 80px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FqEYM5zWZ6H7Bx-IIpO_W5J5VS-M') no-repeat center/contain;
+}
+
+/* 培训师 */
+.icon--300 {
+  width: 80px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FnadXtjRno5KNz3lbL1KPqfi1flR') no-repeat center/contain;
+}
+
+/* 积分不足 */
+.icon--down {
+  width: 116px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FoQmywKZ940BoMM4nD4VM2kME1pv') no-repeat center/contain;
+}
+
+/* 过期会员 */
+.icon--30 {
+  width: 90px;
+  height: 34px;
+  background: url('https://pic.bbtkids.cn/FqhKr1YZp8UwTTK3kAGQ4SNfRDme') no-repeat center/contain;
+}
+.checkbox {
+  width: 38px;
+  height: 38px;
+  background: url('https://pic.bbtkids.cn/Fobj-xlfeZ-pqZY9oiHju64ynzDd') center/38px;
+}
+.checkbox.checkbox--checked,
+.checkbox.checkbox--selected {
+  background-image: url('https://pic.bbtkids.cn/FuHwtSw9pvhuPAisiY8AOBIrtV0E');
+}
+.checkbox.checkbox--disabled {
+  background-image: url('https://pic.bbtkids.cn/FrHUY9PCuNUfikh7IJeeNkLjkfzC');
+}

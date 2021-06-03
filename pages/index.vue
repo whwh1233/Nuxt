@@ -4,9 +4,17 @@
       <a href="/detail" rel="noopener noreferrer" class="button--green">
         detail
       </a>
+      <a href="/activity" rel="noopener noreferrer" class="button--green">
+        activity
+      </a>
     </div>
+
     <div class="message">
       <!-- {{ post.data.c2cSkuList[0] }} -->
+      {{ '等3秒显示细节' }}
+      <br />
+      <!-- {{ msg }} -->
+      <p>{{ msg }}</p>
     </div>
     <div v-for="(item, index) in post.data.c2cSkuList[0]" :key="index" @click="to(item.c2cSkuId)">
       <div>{{ item.c2cSkuId }}</div>
@@ -26,9 +34,13 @@ export default {
   },
 
   async asyncData({ $axios }) {
+    let msg = '空'
     const post = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/home')
-    // console.log(post)
-    return { post }
+    msg = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/getSellC2cSku', {
+      c2cSkuId: 1000790
+    })
+    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6412')
+    return { post, msg, activity }
   }
 }
 </script>
