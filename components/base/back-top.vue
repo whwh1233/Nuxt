@@ -21,7 +21,7 @@
 
 <template>
   <transition name="back-to-top-fade">
-    <div class="back-to-top" :style="`bottom:${this.bottom}px;right:${this.right}px;`" v-show="showIt" @click="backToTop">
+    <div class="back-to-top" :style="{ bottom: bottom, right: right }" v-show="showIt" @click="backToTop">
       <slot></slot>
     </div>
   </transition>
@@ -31,17 +31,19 @@
 export default {
   data() {
     return {
-      showIt: false
+      // false => true
+      //TODO
+      showIt: true
     }
   },
   props: {
     right: {
-      type: Number,
-      default: 40
+      type: String,
+      default: '40px'
     },
     bottom: {
-      type: Number,
-      default: 40
+      type: String,
+      default: '40px'
     }
   },
   methods: {
