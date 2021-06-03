@@ -18,6 +18,12 @@
         </div>
       </div>
     </section>
+
+    <!-- 删除了v-if：v-if="!hideFixedButton"-->
+    <template>
+      <shortcut></shortcut>
+      <back-top></back-top>
+    </template>
   </div>
 </template>
 
@@ -26,7 +32,7 @@ export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6440')
+    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=3647')
     let data = activity.data
     console.log(data)
     let dataList = data.tplDataList
