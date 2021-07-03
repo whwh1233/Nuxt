@@ -32,7 +32,8 @@ export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=3647')
+    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=2905')
+    // 3647
     let data = activity.data
     console.log(data)
     let dataList = data.tplDataList
@@ -58,5 +59,22 @@ h1 {
 }
 .links {
   padding-top: 15px;
+}
+
+.banner__row {
+  display: flex;
+  align-items: center;
+  font-size: 0;
+}
+
+.banner__el {
+  display: block;
+  flex: 1;
+  width: 100%;
+}
+
+.banner__img {
+  display: block;
+  width: 100%;
 }
 </style>

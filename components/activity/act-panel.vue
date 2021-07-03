@@ -85,21 +85,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.banner__row {
-  display: flex;
-  align-items: center;
-  font-size: 0;
-}
-
-.banner__el {
-  display: block;
-  flex: 1;
-  width: 100%;
-}
-
-.banner__img {
-  display: block;
-  width: 100%;
-}
-</style>
+<style></style>
