@@ -69,7 +69,7 @@ export default {
         let res = await this.request.get(API.actgetdata, {
           params: this.param
         })
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.errno == 0) {
           let _data = res.data.data
 

@@ -34,7 +34,7 @@ export default {
     const detail = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/getSellC2cSku', {
       c2cSkuId: 1000790
     })
-    console.log(detail)
+    // console.log(detail)
     return { detail }
   }
 }

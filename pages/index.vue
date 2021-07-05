@@ -29,7 +29,6 @@ export default {
   methods: {
     to(c2cSkuId) {
       console.log('点击商品')
-      console.log(c2cSkuId)
     }
   },
 

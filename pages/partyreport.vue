@@ -158,7 +158,7 @@ export default {
     const res = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uiforum/wapqrcpage?auctionId=1000130&pageName=auction')
     let pageData = res.data.pageData
 
-    console.log(pageData)
+    // console.log(pageData)
     return {
       auction: pageData.auction,
       topic: pageData.auction.topic || '',

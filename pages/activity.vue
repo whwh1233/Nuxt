@@ -35,7 +35,7 @@ export default {
     const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=2905')
     // 3647
     let data = activity.data
-    console.log(data)
+    // console.log(data)
     let dataList = data.tplDataList
     let activityInfo = data.activityInfo
     return { dataList, activityInfo }
