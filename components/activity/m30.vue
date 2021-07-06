@@ -80,7 +80,7 @@
 <template>
   <section class="m30" :class="navFixed ? 'm30_fix' : ''">
     <ul class="m30__anchor-list cfix" :class="'m30__anchor-list--' + size" :data-sort="tplData.sort">
-      <li class="m30__anchor__el" v-for="obj in tplData.imgList" :key="$index">
+      <li class="m30__anchor__el" v-for="(obj, index) in tplData.imgList" :key="index">
         <a class="m30__anchor__link" @click.stop="judge(obj.linkId)" :style="{ backgroundImage: 'url(' + obj.bgImg + ')' }">
           <img class="m30__anchor__img" :src="obj.bgImg" />
         </a>

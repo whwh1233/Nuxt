@@ -4,6 +4,6 @@ import Swiper from 'swiper'
 // Vue.use(Swiper)
 export default () => {
   // Vue.use(infiniteScroll)
-  Vue.use(Swiper)
+  // Vue.use(Swiper)
   //
 }

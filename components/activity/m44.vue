@@ -44,72 +44,17 @@
 </style>
 
 <template>
-  <div :id="'s' + tplData.connId" class="m44-swiper-container" :style="{ height: height }">
-    <div class="swiper-wrapper" @click="bannerLink">
-      <div class="swiper-slide" v-for="(banner, index) in bannerList" :key="index" :class="{ 'swiper-no-swiping': bannerList.length === 1 }">
-        <img class="m44-slide-img" :style="{ height: height }" :src="banner.pic" alt="" />
-      </div>
-    </div>
-    <div v-if="bannerList.length > 1" class="m44-swiper-pagination"></div>
+  <div class="m44">
+    <p>这是m44组件，暂时先注释掉</p>
   </div>
 </template>
 
 <script>
-// import 'swiper/dist/css/swiper.min.css'
-// import Swiper from 'swiper'
-
 export default {
   data() {
     return {
       swiper: null
     }
-  },
-  props: {
-    tplData: {
-      type: Object,
-      default() {
-        return {}
-      }
-    }
-  },
-  computed: {
-    bannerList() {
-      if (!this.tplData || !this.tplData.bannerList) return []
-      return this.tplData.bannerList
-    },
-    height() {
-      if (!this.tplData || !this.tplData.bannerList) return 0
-      let _h = this.tplData.bannerList[0].height
-      let _w = 750
-      return (_h * document.body.clientWidth) / _w + 'px'
-    }
-  },
-  methods: {
-    bannerLink() {
-      if (!this.bannerList || !this.swiper) return
-      let url = this.bannerList[this.swiper.realIndex]['url']
-      this.navTo(url)
-    }
-  },
-  mounted() {
-    let loop = true
-    let autoplay = {
-      delay: 3000,
-      disableOnInteraction: false
-    }
-    if (this.tplData.bannerList.length < 2) {
-      ;(loop = false), (autoplay = false)
-    }
-    this.swiper = new Swiper(`#s${this.tplData.connId}`, {
-      loop,
-      autoplay,
-      freeMode: false,
-      pagination: {
-        el: '.m44-swiper-pagination',
-        bulletClass: 'm44-bullet',
-        bulletActiveClass: 'm44-bullet-active'
-      }
-    })
   }
 }
 </script>

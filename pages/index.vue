@@ -10,13 +10,11 @@
     </div>
 
     <div class="message">
-      <!-- {{ post.data.c2cSkuList[0] }} -->
-      {{ '等3秒显示细节' }}
       <br />
-      <!-- {{ msg }} -->
-      <p>{{ msg }}</p>
+      <p>{{ msg.data.c2cSkuInfo }}</p>
     </div>
-    <div v-for="(item, index) in post.data.c2cSkuList[0]" :key="index" @click="to(item.c2cSkuId)">
+
+    <div v-for="(item, index) in post.data.c2cSkuList" :key="index" @click="to(item.c2cSkuId)">
       <div>{{ item.c2cSkuId }}</div>
       <img :src="item.coverUri" class="img" />
       <div>{{ item.content }}</div>
@@ -34,9 +32,9 @@ export default {
 
   async asyncData({ $axios }) {
     let msg = '空'
-    const post = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/home')
-    msg = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/getSellC2cSku', {
-      c2cSkuId: 1000790
+    const post = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/2.0/uic2c/home')
+    msg = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/1.0/uic2c/getSellC2cSku', {
+      c2cSkuId: 1001168
     })
     const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6412')
     return { post, msg, activity }

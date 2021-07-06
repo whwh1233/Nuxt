@@ -1,7 +1,7 @@
 <template>
   <section class="item-row" :data-sort="tplData.sort" :data-anchor-id="tplData.anchorId">
     <infinite-panel :show-spinner="!onePage" :busy="loadingItem" :is-end="tplData.isEnd" @loadmore="loadMoreItems">
-      <item-list :list="itemList"></item-list>
+      <list :list="itemList"></list>
     </infinite-panel>
   </section>
 </template>
@@ -83,7 +83,7 @@ export default {
           }
         }
       } catch (e) {
-        alert('网络错误')
+        // alert('网络错误')
         console.log(e)
       } finally {
         this.loadingItem = false

@@ -31,10 +31,10 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    const detail = await $axios.$post('http://apidev.bangbangtown.cn/1.0/uic2c/getSellC2cSku', {
-      c2cSkuId: 1000790
+    const detail = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/1.0/uic2c/getSellC2cSku', {
+      c2cSkuId: 1001168
     })
-    // console.log(detail)
+    console.log(detail.data.c2cSkuInfo)
     return { detail }
   }
 }

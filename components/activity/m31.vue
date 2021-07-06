@@ -9,7 +9,7 @@
   <div>
     <img @click.stop="getCoupon" class="act-coupon" :src="bgImg" :data-sort="tplData.sort" :data-anchor-id="tplData.anchorId" />
     <!-- <login ref="login" @login-succ="loginSucc"></login> -->
-    <count-down v-if="timeObj" ref="cd" :time-obj="timeObj"></count-down>
+    <!-- <count-down v-if="timeObj" ref="cd" :time-obj="timeObj"></count-down> -->
   </div>
 </template>
 

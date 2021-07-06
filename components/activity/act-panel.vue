@@ -26,12 +26,12 @@ export default {
     id: {
       type: String,
       default: ''
-    },
-    // 禁止显示模块组
-    limit: {
-      type: Array,
-      default: []
     }
+    // 禁止显示模块组
+    // limit: {
+    //   type: Array,
+    //   default: []
+    // }
   },
   computed: {
     actUrl() {

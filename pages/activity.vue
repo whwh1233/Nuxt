@@ -1,14 +1,15 @@
 <template>
   <div class="container">
     <div class="links">
-      <a href="/index" rel="noopener noreferrer" class="button--green">
+      <a href="/" rel="noopener noreferrer" class="button--green">
         index
       </a>
     </div>
+    <h1>{{ activityInfo.title }}</h1>
+
     <div class="message">
-      <h1>{{ dataList }}</h1>
+      <h2>{{ dataList }}</h2>
       <br />
-      <h2>{{ activityInfo.title }}</h2>
     </div>
     <section v-show="dataList" class=" cfix">
       <div v-for="(tplData, tplIndex) in dataList" :key="tplIndex">
@@ -32,8 +33,9 @@ export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=2905')
+    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6430')
     // 3647
+    // 2905
     let data = activity.data
     // console.log(data)
     let dataList = data.tplDataList
@@ -46,6 +48,13 @@ export default {
 <style>
 h1 {
   height: 200px;
+  overflow: auto;
+  font-size: 100px;
+}
+
+.message {
+  height: 200px;
+  margin-bottom: 20px;
   overflow: auto;
 }
 
