@@ -36,7 +36,7 @@ export default {
     msg = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/1.0/uic2c/getSellC2cSku', {
       c2cSkuId: 1001168
     })
-    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6412')
+    const activity = await $axios.$post('https://apidev.bangbangtown.cn/o/uc/m/uiww/activity?id=6430')
     return { post, msg, activity }
   }
 }

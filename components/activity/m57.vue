@@ -61,7 +61,7 @@ export default {
         let parentWidth = 10000
         if (this.$parent && this.$parent.$el && this.$parent.$el.clientWidth) {
           parentWidth = this.$parent.$el.clientWidth
-          console.log(parentWidth)
+          // console.log(parentWidth)
         }
         let screenWidth = Math.min(document.body.clientWidth, window.screen.width * 2, parentWidth)
         let w = screenWidth / n

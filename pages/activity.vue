@@ -8,7 +8,7 @@
     <h1>{{ activityInfo.title }}</h1>
 
     <div class="message">
-      <h2>{{ dataList }}</h2>
+      <!-- <h2>{{ dataList }}</h2> -->
       <br />
     </div>
     <section v-show="dataList" class=" cfix">
@@ -33,13 +33,20 @@ export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('http://52.81.25.5:8081/o/uc/1.0/uiww/activity?id=6430')
+    const activity = await $axios.$post('https://apidev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=6430')
     // 3647
     // 2905
     let data = activity.data
     // console.log(data)
-    let dataList = data.tplDataList
-    let activityInfo = data.activityInfo
+    let dataList = []
+    let activityInfo = {}
+    if (data) {
+      dataList = data.tplDataList || []
+      activityInfo = data.activityInfo || {}
+    }
+
+    // let dataList = []
+    // let activityInfo = {}
     return { dataList, activityInfo }
   }
 }

@@ -37,12 +37,12 @@
     <ul class="cfix">
       <template v-if="single">
         <li v-for="(item, index) in list" :key="item.itemId" class="item__el--single">
-          <item-element-single v-bind="$attrs" v-on="$listeners" :item="item" :index="index"></item-element-single>
+          <item-element-single v-bind="$attrs" v-on="$listeners" :item="item" :index="index + ''"></item-element-single>
         </li>
       </template>
       <template v-else>
         <li v-for="(item, index) in list" :key="item.itemId" class="item__el">
-          <item-element v-bind="$attrs" v-on="$listeners" :item="item" :index="index"></item-element>
+          <item-element v-bind="$attrs" v-on="$listeners" :item="item" :index="index + ''"></item-element>
         </li>
       </template>
     </ul>

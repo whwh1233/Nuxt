@@ -118,7 +118,7 @@ export default {
       ratio = ratio * 100 + '%'
       this.$set(this.tplData.ugcInfoList[index], 'ratio', ratio)
     })
-    console.log(this.tplData.ugcInfoList)
+    // console.log(this.tplData.ugcInfoList)
   }
 }
 </script>

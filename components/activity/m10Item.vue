@@ -1,8 +1,11 @@
 <template>
   <section class="item-row" :data-sort="tplData.sort" :data-anchor-id="tplData.anchorId">
-    <infinite-panel :show-spinner="!onePage" :busy="loadingItem" :is-end="tplData.isEnd" @loadmore="loadMoreItems">
+    <list :list="itemList"></list>
+
+    <!-- <infinite-panel :show-spinner="!onePage" :busy="loadingItem" :is-end="tplData.isEnd" @loadmore="loadMoreItems">
       <list :list="itemList"></list>
-    </infinite-panel>
+      <p>物品列表</p>
+    </infinite-panel> -->
   </section>
 </template>
 
