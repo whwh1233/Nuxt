@@ -79,11 +79,17 @@
 .m52__content {
   min-height: 100px;
 }
+
+.m52__act-limited {
+  height: 400px;
+  overflow: auto;
+}
 </style>
 
 <template>
   <div class="m52">
     <!-- <sticky top="0"> -->
+    <!-- <div>{{ tplData }}</div> -->
     <div class="m52__nav__wrapper">
       <div class="m52__nav">
         <div v-for="(nav, index) in tplData.rushInfo" :key="index" class="m52__nav__el" :class="{ 'm52__nav__el--active': current === nav.id }" @click="changeTab(nav)">
@@ -95,16 +101,21 @@
     <!-- </sticky> -->
 
     <div class="m52__content">
-      <template v-for="obj in tplData.rushInfo">
+      <div class="m52__act-limited">
+        <act-panel :id="tplData.rushInfo[0].id"></act-panel>
+      </div>
+      <!-- <template v-for="obj in tplData.rushInfo">
         <div v-show="current === obj.id" class="m52__content__el">
           <div class="m52__loading" v-show="!obj.loaded"></div>
+          <act-panel @actpanel-loaded="actLoaded" :id="obj.id"></act-panel>
+
           <template v-if="obj.visited">
             <div v-show="obj.loaded">
               <act-panel @actpanel-loaded="actLoaded" :id="obj.id"></act-panel>
             </div>
           </template>
         </div>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>

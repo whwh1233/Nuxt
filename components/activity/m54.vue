@@ -60,34 +60,44 @@
 .m54__content {
   min-height: 100px;
 }
+
+.m54__act-limited {
+  height: 400px;
+  overflow: auto;
+}
 </style>
 
 <template>
   <div class="m54">
-    <sticky top="0">
-      <div class="m54__nav__wrapper">
-        <div class="m54__nav">
-          <div v-for="(nav, index) in tplData.tabInfo" :key="index" class="m54__nav__el" :class="{ 'm54__nav__el--active': current === nav.id }" @click="changeTab(nav)">
-            <p class="m54__nav__el__primary">{{ nav.label }}</p>
-          </div>
+    <div class="m54__tplData">{{ tplData }}</div>
+    <!-- <sticky top="0"> -->
+    <div class="m54__nav__wrapper">
+      <div class="m54__nav">
+        <div v-for="(nav, index) in tplData.tabInfo" :key="index" class="m54__nav__el" :class="{ 'm54__nav__el--active': current === nav.id }" @click="changeTab(nav)">
+          <p class="m54__nav__el__primary">{{ nav.label }}</p>
         </div>
       </div>
-    </sticky>
+    </div>
+    <!-- </sticky> -->
 
     <div class="m54__content">
-      <template v-for="obj in tplData.tabInfo">
+      <div class="m54__act-limited">
+        <act-panel :id="tplData.tabInfo[0].id"></act-panel>
+      </div>
+
+      <!-- <template v-for="obj in tplData.tabInfo">
         <div v-show="current === obj.id" class="m54__content__el">
-          <!-- <div class="m54__loading" v-show="!obj.loaded"></div> -->
+          <div class="m54__loading" v-show="!obj.loaded"></div>
           <h1>m54显示内嵌活动页</h1>
           <act-panel :id="obj.id"></act-panel>
-          <!-- 去除判断，直接显示 -->
-          <!-- <template v-if="obj.visited">
+          去除判断，直接显示 
+          <template v-if="obj.visited">
             <div v-show="obj.loaded">
               <act-panel @actpanel-loaded="actLoaded" :id="obj.id"></act-panel>
             </div>
-          </template> -->
+          </template>
         </div>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>

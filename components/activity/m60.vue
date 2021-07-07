@@ -194,6 +194,7 @@
 </style>
 <template>
   <div>
+    <div class="">{{ tplData }}</div>
     <div class="m60__nav__list" v-if="tplData.tabList.length > 0" :style="{ background: activityInfo.baseCss && activityInfo.baseCss.bgcolor ? activityInfo.baseCss.bgcolor : '#FFF' }">
       <div class="m60__nav__ele" @click="changeTab($event, index)" :class="nav === chosedNav ? 'm60__nav__ele--active' : ''" v-for="(nav, index) in tplData.tabList" :key="index">
         {{ nav }}

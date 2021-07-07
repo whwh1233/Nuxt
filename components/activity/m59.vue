@@ -88,11 +88,19 @@
 .isline1 .m59__nav__el--active:after {
   bottom: 20px;
 }
+
+.m59__act-limited {
+  height: 400px;
+  overflow: auto;
+}
 </style>
 
 <template>
   <div class="m59" :class="{ isline1: !isLine2 }">
     <!-- <sticky top="0"> -->
+    <div>
+      {{ tplData }}
+    </div>
     <div class="m59__nav__wrapper" :class="navFixed ? 'm59__fix' : ''">
       <div class="m59__nav" :style="{ backgroundColor: bgColor }">
         <div
@@ -111,7 +119,10 @@
     <!-- </sticky> -->
 
     <div class="m59__content">
-      <template v-for="obj in tplData.rushInfo">
+      <div class="m59__act-limited">
+        <act-panel :id="tplData.rushInfo[1].id"></act-panel>
+      </div>
+      <!-- <template v-for="obj in tplData.rushInfo">
         <div v-show="current === obj.id" class="m59__content__el">
           <div class="m59__loading" v-show="!obj.loaded"></div>
           <template v-if="obj.visited">
@@ -120,7 +131,7 @@
             </div>
           </template>
         </div>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>

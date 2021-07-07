@@ -14,7 +14,7 @@
     <section v-show="dataList" class=" cfix">
       <div v-for="(tplData, tplIndex) in dataList" :key="tplIndex">
         <h5>模块：{{ tplData.tpl }}</h5>
-        <div v-if="tplData.tpl !== 'm56'">
+        <div>
           <component :is="tplData.tpl" :tpl-data="tplData" :activityId="activityInfo.id"></component>
         </div>
       </div>
@@ -33,9 +33,11 @@ export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('https://apidev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=6430')
+    const activity = await $axios.$post('https://wwdev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=6430')
+
     // 3647
     // 2905
+    // 6430
     let data = activity.data
     // console.log(data)
     let dataList = []

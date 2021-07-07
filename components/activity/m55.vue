@@ -382,59 +382,59 @@
 
 <template>
   <div class="m55 cfix">
-    <infinite-panel :show-spinner="false" :busy="loadingItem" :is-end="isEnd" @loadmore="loadMoreItems">
-      <template v-for="item in itemList">
-        <navigator :url="item.goalUri || item.url" class="m55__wrapper" :class="'m55__wrapper--' + tplData.column" :self-data="item.selfData" data-emergence="hidden" prefix="m55">
-          <div class="m55__img" :style="{ backgroundImage: 'url(' + getImgHeadPic(item) + ')' }">
-            <template v-if="item.soldOut">
-              <img src="https://pic.wanwustore.cn/Fp01CrHd8u_xRY-wY8e0_bFJWJXW" class="m55__soldout-img" />
-            </template>
-            <template v-else>
-              <img v-if="item.itemStatus && item.itemStatus === 'ready'" src="https://pic.wanwustore.cn/FumoB7hgF5Nda_yt7byUbK6w7Bs-" class="m55__remain-img" />
-            </template>
+    <!-- <infinite-panel :show-spinner="false" :busy="loadingItem" :is-end="isEnd" @loadmore="loadMoreItems"> -->
+    <template v-for="item in itemList">
+      <navigator :url="item.goalUri || item.url" class="m55__wrapper" :class="'m55__wrapper--' + tplData.column" :self-data="item.selfData" data-emergence="hidden" prefix="m55">
+        <div class="m55__img" :style="{ backgroundImage: 'url(' + getImgHeadPic(item) + ')' }">
+          <template v-if="item.soldOut">
+            <img src="https://pic.wanwustore.cn/Fp01CrHd8u_xRY-wY8e0_bFJWJXW" class="m55__soldout-img" />
+          </template>
+          <template v-else>
+            <img v-if="item.itemStatus && item.itemStatus === 'ready'" src="https://pic.wanwustore.cn/FumoB7hgF5Nda_yt7byUbK6w7Bs-" class="m55__remain-img" />
+          </template>
 
-            <div v-if="tplData.column > 1 && item.extra.tag" class="m55__tag">{{ item.extra.tag }}</div>
-            <div v-if="item.extra.saleNum" class="m55__salenum line line-1">热销{{ item.extra.saleNum }}件</div>
-            <!-- 到手价 -->
-            <div class="hand-panel" v-if="item.handPriceBanner && tplData.column == 2" :class="{ btom100: item.presale }">
-              <div class="hand__top">
-                <div class="hand__left">
-                  <div class="left__detail">
-                    <p class="hand__tag line line-1">{{ item.handPriceBanner.handPriceTag }}</p>
-                    <p class="hand__price line line-1">{{ item.handPriceBanner.handPrice }}</p>
-                  </div>
-                </div>
-                <div class="hand__right"></div>
-              </div>
-            </div>
-            <!-- 预售 -->
-            <template v-if="item.presale && tplData.column == 2">
-              <div class="presale-panel">
-                <p class="presale__price">{{ item.presale.sellPrice }}</p>
-                <div class="step__price">
-                  <p class="front__price">定金 {{ item.presale.frontPrice }}</p>
-                  <p class="front__price">尾款 {{ item.presale.endPrice }}</p>
+          <div v-if="tplData.column > 1 && item.extra.tag" class="m55__tag">{{ item.extra.tag }}</div>
+          <div v-if="item.extra.saleNum" class="m55__salenum line line-1">热销{{ item.extra.saleNum }}件</div>
+          <!-- 到手价 -->
+          <div class="hand-panel" v-if="item.handPriceBanner && tplData.column == 2" :class="{ btom100: item.presale }">
+            <div class="hand__top">
+              <div class="hand__left">
+                <div class="left__detail">
+                  <p class="hand__tag line line-1">{{ item.handPriceBanner.handPriceTag }}</p>
+                  <p class="hand__price line line-1">{{ item.handPriceBanner.handPrice }}</p>
                 </div>
               </div>
-            </template>
-          </div>
-          <div class="m55__item">
-            <div class="m55__name line line-2">{{ item.name }}</div>
-            <div v-if="tplData.column == 1" class="m55__tag__wrapper">
-              <div v-if="item.extra.tag" class="m55__tag">{{ item.extra.tag }}</div>
-            </div>
-            <div class="m55__price">
-              <div class="m55__sellprice">￥{{ item.predictPrice ? item.predictPrice : item.sellPrice }}</div>
-              <div v-if="item.predictPrice ? item.predictPrice !== item.originPrice : item.sellPrice !== item.originPrice" class="m55__originprice">￥{{ item.originPrice }}</div>
-            </div>
-            <div class="m55__btn">
-              <div v-if="item.rebate" class="m55__rabate">返{{ item.rebate }}<icon type="rebate-arr" :width="38"> </icon></div>
-              <div v-else class="m55__view"></div>
+              <div class="hand__right"></div>
             </div>
           </div>
-        </navigator>
-      </template>
-    </infinite-panel>
+          <!-- 预售 -->
+          <template v-if="item.presale && tplData.column == 2">
+            <div class="presale-panel">
+              <p class="presale__price">{{ item.presale.sellPrice }}</p>
+              <div class="step__price">
+                <p class="front__price">定金 {{ item.presale.frontPrice }}</p>
+                <p class="front__price">尾款 {{ item.presale.endPrice }}</p>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div class="m55__item">
+          <div class="m55__name line line-2">{{ item.name }}</div>
+          <div v-if="tplData.column == 1" class="m55__tag__wrapper">
+            <div v-if="item.extra.tag" class="m55__tag">{{ item.extra.tag }}</div>
+          </div>
+          <div class="m55__price">
+            <div class="m55__sellprice">￥{{ item.predictPrice ? item.predictPrice : item.sellPrice }}</div>
+            <div v-if="item.predictPrice ? item.predictPrice !== item.originPrice : item.sellPrice !== item.originPrice" class="m55__originprice">￥{{ item.originPrice }}</div>
+          </div>
+          <div class="m55__btn">
+            <div v-if="item.rebate" class="m55__rabate">返{{ item.rebate }}<icon type="rebate-arr" :width="38"> </icon></div>
+            <div v-else class="m55__view"></div>
+          </div>
+        </div>
+      </navigator>
+    </template>
+    <!-- </infinite-panel> -->
   </div>
 </template>
 

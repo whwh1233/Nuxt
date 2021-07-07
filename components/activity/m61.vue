@@ -118,6 +118,7 @@
 <template>
   <div>
     <div class="m61">
+      <div>{{ tplData }}</div>
       <navigator :url="`/m/uiww/getSellItem?itemId=${item.itemId}`" :vc="`sellitemvc&itemId=${item.itemId}`" v-for="(item, index) in tplData.itemList" :key="index" class="m61__ele__wrapper">
         <div class="m61__ele">
           <div class="m61__tag" v-if="item.tag">{{ item.tag }}</div>

@@ -7,7 +7,9 @@
 
 <template>
   <div>
-    <img @click.stop="getCoupon" class="act-coupon" :src="bgImg" :data-sort="tplData.sort" :data-anchor-id="tplData.anchorId" />
+    <div class="text">抢券模块</div>
+    <!-- <img @click.stop="getCoupon" class="act-coupon" :src="bgImg" :data-sort="tplData.sort" :data-anchor-id="tplData.anchorId" /> -->
+    <img class="act-coupon" :src="bgImg" />
     <!-- <login ref="login" @login-succ="loginSucc"></login> -->
     <!-- <count-down v-if="timeObj" ref="cd" :time-obj="timeObj"></count-down> -->
   </div>
@@ -54,15 +56,17 @@ export default {
       }
     },
     bgImg() {
-      if (this.period === 0) {
-        return this.tplData.preimg
-      }
-      if (this.period === 1) {
-        return this.tplData.actimg
-      }
-      if (this.period === 2) {
-        return this.tplData.afterimg
-      }
+      return this.tplData.preimg
+
+      // if (this.period === 0) {
+      //   return this.tplData.preimg
+      // }
+      // if (this.period === 1) {
+      //   return this.tplData.actimg
+      // }
+      // if (this.period === 2) {
+      //   return this.tplData.afterimg
+      // }
     },
     timeObj() {
       return {
@@ -85,41 +89,41 @@ export default {
     // countDown,
   },
   methods: {
-    async getCoupon() {
-      if (this.busy || this.period !== 1) return
-      this.busy = true
-      try {
-        let res = await this.request.post(API.actgetdata, this.param)
-        res = res.data
-        if (!res) {
-          return alert('获取优惠券失败，请重试！')
-        }
-        var errno = res.errno
-        switch (errno) {
-          case 0:
-            return alert('领取成功！')
-          case 201:
-            this.loginComp.login(window.location.href)
-            break
-          case 202019:
-            break
-          case 230016:
-            throw new Error()
-          default:
-            alert(res.errmsg)
-        }
-      } catch (e) {
-        alert('获取优惠券失败，请重试！')
-      } finally {
-        this.busy = false
-      }
-    },
-    loginSucc() {
-      this.getCoupon()
-    }
+    // async getCoupon() {
+    //   if (this.busy || this.period !== 1) return
+    //   this.busy = true
+    //   try {
+    //     let res = await this.request.post(API.actgetdata, this.param)
+    //     res = res.data
+    //     if (!res) {
+    //       return alert('获取优惠券失败，请重试！')
+    //     }
+    //     var errno = res.errno
+    //     switch (errno) {
+    //       case 0:
+    //         return alert('领取成功！')
+    //       case 201:
+    //         this.loginComp.login(window.location.href)
+    //         break
+    //       case 202019:
+    //         break
+    //       case 230016:
+    //         throw new Error()
+    //       default:
+    //         alert(res.errmsg)
+    //     }
+    //   } catch (e) {
+    //     alert('获取优惠券失败，请重试！')
+    //   } finally {
+    //     this.busy = false
+    //   }
+    // },
+    // loginSucc() {
+    //   this.getCoupon()
+    // }
   },
   mounted() {
-    this.cdComp = this.$refs.cd
+    // this.cdComp = this.$refs.cd
     // alert()
   }
 }

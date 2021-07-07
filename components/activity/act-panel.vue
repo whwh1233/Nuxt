@@ -8,6 +8,7 @@
 
 <script>
 import Vue from 'vue'
+// import errorVue from '../../../nuxtjs.org/layouts/error.vue'
 // import './activity.css'
 // import API from 'api/api'
 
@@ -46,17 +47,19 @@ export default {
       return url.replace('/m/', '/1.0/')
     }
   },
-  async fetch({ $axios }) {
-    let res = await $axios.$post('https://apidev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=3000')
-    res = res.data
+  async fetch() {
+    console.log('act-panel in fetch :')
+    console.log(this.id)
+    let api = 'https://wwdev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=' + this.id
+    let res = await fetch(api).then(res => res.json())
+    if (!res) throw err
     let data = res.data
-    if (res.errno !== 0) {
-      return
-    }
-    console.log(res)
     this.dataList = data.tplDataList
     this.activityInfo = data.activityInfo
-    this.activityInfo.activityUrl = window.location.origin + this.actUrl
+  },
+  mounted() {
+    // console.log('act-panel:')
+    // console.log(this.id)
   }
   // async mounted() {
   //   try {
