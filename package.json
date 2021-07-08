@@ -17,5 +17,6 @@
     "swiper": "^4.5.1",
     "vue-infinite-scroll": "^2.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "config": {}
 }
