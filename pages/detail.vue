@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      detail: '暂无信息'
+      // detail: '暂无信息'w
     }
   },
   async asyncData({ $axios }) {

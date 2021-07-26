@@ -11,7 +11,7 @@
 
     <div class="message">
       <br />
-      <p>{{ msg.data.c2cSkuInfo }}</p>
+      <p>{{ post.data.c2cSkuList }}</p>
     </div>
 
     <div v-for="(item, index) in post.data.c2cSkuList" :key="index" @click="to(item.c2cSkuId)">
@@ -33,9 +33,9 @@ export default {
   async asyncData({ $axios }) {
     let msg = '空'
     const post = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/2.0/uic2c/home')
-    msg = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/1.0/uic2c/getSellC2cSku', {
-      c2cSkuId: 1001168
-    })
+    // msg = await $axios.$post('http://apidev.bangbangtown.cn/o/cc/1.0/uic2c/getSellC2cSku', {
+    //   c2cSkuId: 1001168
+    // })
 
     return { post, msg }
   }
@@ -53,9 +53,16 @@ export default {
   text-align: center;
 }
 
+.message {
+  margin-bottom: 100px;
+  height: 400px;
+  overflow: auto;
+  font-size: 28px;
+}
+
 .img {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
 }
 
 .title {

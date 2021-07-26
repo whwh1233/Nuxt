@@ -48,9 +48,9 @@ export default {
     }
   },
   async fetch() {
-    console.log('act-panel in fetch :')
+    console.log('fetch in act-panel :')
     console.log(this.id)
-    let api = 'https://wwdev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=' + this.id
+    let api = 'https://apidev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=' + this.id
     let res = await fetch(api).then(res => res.json())
     if (!res) throw err
     let data = res.data

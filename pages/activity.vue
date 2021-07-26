@@ -11,6 +11,12 @@
       <!-- <h2>{{ dataList }}</h2> -->
       <br />
     </div>
+
+    <div class="message">
+      <!-- <h2>{{ activityInfo }}</h2> -->
+      <br />
+    </div>
+
     <section v-show="dataList" class=" cfix">
       <div v-for="(tplData, tplIndex) in dataList" :key="tplIndex">
         <h5>模块：{{ tplData.tpl }}</h5>
@@ -29,26 +35,22 @@
 </template>
 
 <script>
+// activityId
+// 3647
+// 2905
+// 6430
 export default {
   methods: {},
 
   async asyncData({ $axios }) {
-    const activity = await $axios.$post('https://wwdev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=6430')
-
-    // 3647
-    // 2905
-    // 6430
+    const activity = await $axios.$post('https://apidev.bangbangtown.cn/o/uc/1.0/uiww/activity?id=6430')
     let data = activity.data
-    // console.log(data)
     let dataList = []
     let activityInfo = {}
     if (data) {
       dataList = data.tplDataList || []
       activityInfo = data.activityInfo || {}
     }
-
-    // let dataList = []
-    // let activityInfo = {}
     return { dataList, activityInfo }
   }
 }
